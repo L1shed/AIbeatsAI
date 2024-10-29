@@ -1,0 +1,214 @@
+[
+    {
+        "label": "unittest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "unittest",
+        "description": "unittest",
+        "detail": "unittest",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "patch",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "patch",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "bot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "bot",
+        "description": "bot",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "what_beats",
+        "importPath": "chat_api",
+        "description": "chat_api",
+        "isExtraImport": true,
+        "detail": "chat_api",
+        "documentation": {}
+    },
+    {
+        "label": "what_beats",
+        "importPath": "chat_api",
+        "description": "chat_api",
+        "isExtraImport": true,
+        "detail": "chat_api",
+        "documentation": {}
+    },
+    {
+        "label": "words",
+        "importPath": "chat_api",
+        "description": "chat_api",
+        "isExtraImport": true,
+        "detail": "chat_api",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "Keys",
+        "importPath": "selenium.webdriver.common.keys",
+        "description": "selenium.webdriver.common.keys",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.keys",
+        "documentation": {}
+    },
+    {
+        "label": "WebDriverWait",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "expected_conditions",
+        "importPath": "selenium.webdriver.support",
+        "description": "selenium.webdriver.support",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "Client",
+        "importPath": "g4f.client",
+        "description": "g4f.client",
+        "isExtraImport": true,
+        "detail": "g4f.client",
+        "documentation": {}
+    },
+    {
+        "label": "TestBot",
+        "kind": 6,
+        "importPath": "tests.test_bot",
+        "description": "tests.test_bot",
+        "peekOfCode": "class TestBot(unittest.TestCase):\n    @patch('bot.driver')\n    @patch('bot.what_beats')\n    def test_play_function(self, mock_what_beats, mock_driver):\n        # Mock elements for the Selenium driver\n        mock_driver.find_elements.return_value = [MagicMock(), MagicMock(text=\"rock\")]\n        mock_driver.find_element.return_value = MagicMock()\n        # Simulate response from what_beats function\n        mock_what_beats.return_value = \"paper\"\n        bot.play()",
+        "detail": "tests.test_bot",
+        "documentation": {}
+    },
+    {
+        "label": "TestChatAPI",
+        "kind": 6,
+        "importPath": "tests.test_chat_api",
+        "description": "tests.test_chat_api",
+        "peekOfCode": "class TestChatAPI(unittest.TestCase):\n    def test_hardcoded_response(self):\n        # Test if the hardcoded response for 'rock' works\n        result = what_beats(\"rock\")\n        self.assertEqual(result, \"paper\")\n    def test_valid_response_format(self):\n        # Here, you would mock the API call to return a controlled response\n        with patch('chat_api.client') as mock_client:\n            mock_response = MagicMock()\n            mock_response.choices[0].message.content = \"scissors.\"",
+        "detail": "tests.test_chat_api",
+        "documentation": {}
+    },
+    {
+        "label": "play",
+        "kind": 2,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "def play():\n    ps = driver.find_elements(By.TAG_NAME, \"p\")\n    it = ps[1].text[:-1]\n    words.append(it)\n    print(\"What beats \" + it + \"?\")\n    beater = what_beats(it)\n    field = driver.find_element(by=By.TAG_NAME, value=\"input\")\n    field.clear()\n    field.click()\n    time.sleep(0.5)",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "driver",
+        "kind": 5,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "driver = webdriver.Chrome()\ndriver.get(\"https://www.whatbeatsrock.com/\")\nassert driver.title == \"What Beats Rock Game\"\ndef play():\n    ps = driver.find_elements(By.TAG_NAME, \"p\")\n    it = ps[1].text[:-1]\n    words.append(it)\n    print(\"What beats \" + it + \"?\")\n    beater = what_beats(it)\n    field = driver.find_element(by=By.TAG_NAME, value=\"input\")",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "what_beats",
+        "kind": 2,
+        "importPath": "chat_api",
+        "description": "chat_api",
+        "peekOfCode": "def what_beats(it: str) -> str:\n    # Hardcoded options (helps saving credits)\n    if it == \"rock\":\n        return \"paper\"\n    chat_completion = client.chat.completions.create(\n        model=\"gpt-3.5-turbo\",\n        messages=[{\n            \"role\": \"user\", \n            \"content\": \"Please find an applicable original creative answer in one word to this question: \\\"What beats \" + it + \"?\\\"\"\n        }],",
+        "detail": "chat_api",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "chat_api",
+        "description": "chat_api",
+        "peekOfCode": "client = Client()\nwords = [\"\"]\ndef what_beats(it: str) -> str:\n    # Hardcoded options (helps saving credits)\n    if it == \"rock\":\n        return \"paper\"\n    chat_completion = client.chat.completions.create(\n        model=\"gpt-3.5-turbo\",\n        messages=[{\n            \"role\": \"user\", ",
+        "detail": "chat_api",
+        "documentation": {}
+    },
+    {
+        "label": "words",
+        "kind": 5,
+        "importPath": "chat_api",
+        "description": "chat_api",
+        "peekOfCode": "words = [\"\"]\ndef what_beats(it: str) -> str:\n    # Hardcoded options (helps saving credits)\n    if it == \"rock\":\n        return \"paper\"\n    chat_completion = client.chat.completions.create(\n        model=\"gpt-3.5-turbo\",\n        messages=[{\n            \"role\": \"user\", \n            \"content\": \"Please find an applicable original creative answer in one word to this question: \\\"What beats \" + it + \"?\\\"\"",
+        "detail": "chat_api",
+        "documentation": {}
+    }
+]
