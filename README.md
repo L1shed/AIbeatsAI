@@ -31,3 +31,9 @@ Double-click on the `run.bat` file or type this command
 ```sh
 run.bat
 ```
+
+### Infos
+
+The AI's temperature is deliberately low to offer original answers. Feel free to set it as you like!
+
+The project is using [gpt4free](https://github.com/xtekky/gpt4free) library and **does not require any API-key**
