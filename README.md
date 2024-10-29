@@ -21,7 +21,7 @@ Have you ever wondered [What Beats Rock?](https://www.whatbeatsrock.com/) ... of
 Download this repo.
 
 ```sh
-git clone
+git clone https://github.com/L1shed/AIbeatsAI.git
 ```
 
 ### Run
@@ -31,7 +31,3 @@ Double-click on the `run.bat` file or type this command
 ```sh
 run.bat
 ```
-
-## Inspiration
-
-https://www.youtube.com/watch?v=V07U-B75SCc
